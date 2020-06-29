@@ -1,0 +1,45 @@
+<mat-toolbar>
+    <span>Welcome to Angular Login Page</span>
+</mat-toolbar>
+
+<div class="example-container">
+<mat-card class="card">
+
+<p>
+    Please enter your username and password to proceed
+</p>
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" placeholder="Enter your username" name="username">
+          <mat-error *ngIf="this.loginForm.get('username').hasError('required')">
+            Username is mandatory
+          </mat-error>
+          <mat-error *ngIf="this.loginForm.get('username').hasError('minlength')">
+            Username should be at least 8 characters
+          </mat-error>
+          <mat-error *ngIf="this.loginForm.get('username').hasError('maxlength')">
+            Username should not be more than 15 characters
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" placeholder="Enter your password" name="password">
+          <mat-error *ngIf="this.loginForm.get('password').hasError('required')">
+            Password is mandatory
+          </mat-error>
+          <mat-error *ngIf="this.loginForm.get('password').hasError('minlength')">
+            Password should be at least 8 characters
+          </mat-error>
+          <mat-error *ngIf="this.loginForm.get('password').hasError('maxlength')">
+            Password should not be more than 15 characters
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Log in</button>
+
+      </form>
+    </mat-card>
+</div>
