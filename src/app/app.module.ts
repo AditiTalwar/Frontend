@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginSuccessfulComponent } from './login-successful/login-successful.component';
 import { DemoMaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeeDetailsService } from './employee-details.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

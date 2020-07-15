@@ -5,5 +5,16 @@
     <button mat-raised-button color="primary" (click)="logout()">Log out</button>
   </mat-toolbar>
   <div class = "welcome-page">
-  <p>Welcome, you have been successfuly logged in.</p>
+    <mat-card>
+      <mat-list role="list" *ngFor="let d of employeeDetails.skills">
+        <mat-list-item role="listitem"><strong>Name:</strong>  &nbsp; {{employeeDetails.name}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>Phone no: </strong> {{employeeDetails.phoneNumber}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>Department: </strong> {{employeeDetails.department}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>Description: </strong> {{employeeDetails.description}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>id:</strong>  &nbsp; {{d.name}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>type:</strong>  &nbsp; {{d.level}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>type:</strong>  &nbsp; {{d.description}}</mat-list-item>
+      </mat-list> 
+      </mat-card>      
+
   </div>
